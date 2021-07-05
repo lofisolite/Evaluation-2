@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Jeu de dée</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header>
+      <h1>100 ou Rien</h1>
+      <div id="header-parent">
+        <button id="title-rules">Règles du jeu </button>
+        <div id="header-child">
+          <div id='rules'><p>Il y a deux joueurs. Le premier joueur lance le dée et enregistre le score du dé dans le score actuel. Il peut ensuite relancer le dée autant de fois qu'il veut mais si le dée fait un score de 1, le joueur perd toute sa cagnotte.
+          </p>
+          <p>A tout moment, le joueur peut sécuriser son score en cliquant sur le bouton "hold". Ses points sont transférés dans le score global et c'est au tour de l'autre joueur de lancer le dé.</p>
+          <p>Le vainqueur est celui qui fait un score global de 100 en premier.
+          </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <p class="p-texte">C'est au tour du joueur 1</p>
+      <button id="lancer">Lancer le dé</button>
+      <button id="hold">Hold</button>
+
+      <div id="center">
+
+        <div id="player-1" class="space">
+          <h2>Joueur 1</h2>
+          <h3 class="current">Score actuel</h3>
+          <p id="score-current-1"></p>
+          <div id="div-score-global">
+            <h3 class="global">Score global</h3>
+            <p id="score-global-1">45</p>
+          </div>
+        </div>
+
+        <div class="space">
+          <img src="images/face-1.png">
+        </div>
+
+        <div id="player-2" class="space">
+          <h2>Joueur 2</h2>
+          <h3 class="current">Score actuel</h3>
+          <p id="score-current-2"></p>
+          <div id="div-score-global">
+            <h3 class="global">Score global</h3>
+            <p id="score-global-2">73</p>
+          </div>
+        </div>
+      </div>
+      <p id="win"></p>
+      <hr>
+      <p class="p-texte">Vous voulez refaire une partie ?</p>
+      <button id="new-game">Nouvelle partie</button>
+    </main>
+
+  <script src="jquery-3.6.0.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>

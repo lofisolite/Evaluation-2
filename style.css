@@ -1,0 +1,179 @@
+* {
+  font-family:'Lato', sans-serif;
+  margin:0;
+  padding:0;
+}
+
+/* header - titre et règle */
+
+header{
+  background-color:#3742fa;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+}
+
+header h1{
+  margin-top:12px;
+  padding:12px;
+  background-color:white;
+  border-radius:10px;
+  box-shadow:0 0 15px lightgray;
+}
+
+#header-parent{
+  width:80%;
+  border:solid 2px white;
+  margin:20px 10px;
+}
+
+#title-rules{
+  text-align:center;
+  border:none;
+  font-weight:bold;
+  letter-spacing:1px;
+  padding:8px;
+  background-color:white;
+  width:100%;
+  font-size:1.3rem;
+}
+
+#title-rules:hover{
+  background:#82ccdd;
+}
+
+#rules{
+  padding: 25px;
+  background:#fff;
+  line-height:1.7;
+  letter-spacing: 1px;
+  font-size:1.1rem;
+  display:none;
+}
+
+
+/* main - interface du jeu */
+
+main{
+  display:flex;
+  flex-direction:column;
+  margin:40px 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+main img{
+  width: 100px;
+  height:100px;
+  padding-top:30px;
+}
+
+main button{
+  font-size:1.2rem;
+  letter-spacing:1px;
+  border:solid 1px;
+  border-radius:10px;
+  background-color: #fff;
+}
+
+main button:hover {
+  background-color:#e15f41;
+  color:#fff;
+}
+
+main button:active{
+  background-color:#b33939;
+}
+
+#lancer{
+  padding:10px 15px;
+}
+
+#hold{
+  padding:10px 50px;
+}
+
+#lancer, #hold{
+  margin:15px 0px 10px 0px;
+}
+
+#new-game{
+  padding:8px;
+  margin-top : 15px;
+}
+
+.p-texte{
+  font-size:1.3rem;
+  letter-spacing:1px;
+  color:#1e3799;
+  font-weight:700;
+  text-align:center;
+}
+
+.current{
+  margin:15px 0px;
+  font-size:1.2rem;
+  font-weight:500;
+}
+
+.global{
+  font-size:1.2rem;
+  font-weight:500;
+  padding-bottom:5px;
+}
+
+#div-score-global{
+  background-color:#e15f41;
+  color:white;
+  padding:5px 5px 10px 5px;
+
+}
+
+main hr{
+  width: 50%;
+  height: 2px;
+  background-color: #3742fa;
+  border:none;
+  margin:5px 0px 25px 0px;
+}
+
+#center{
+  margin:10px 0px;
+  display:flex;
+  justify-content: center;
+}
+
+#player-1, #player-2, main img{
+  margin:30px 100px;
+  text-align:center;
+  font-size:1.3rem;
+}
+
+@media screen and (max-width:950px){
+  #player-1, #player-2, main img{
+    margin:30px 80px;
+  }
+}
+
+@media screen and (max-width:800px){
+  #player-1, #player-2, main img{
+    margin:30px 60px;
+  }
+}
+
+@media screen and (max-width:700px){
+  #player-1, #player-2, main img{
+    margin:30px 20px;
+  }
+  main img{
+    width: 70px;
+    height:70px;
+  }
+}
+
+@media screen and (max-width:450px){
+  #player-1, #player-2, main img{
+    margin:30px 8px;
+  }
+}
