@@ -4,6 +4,10 @@
   padding:0;
 }
 
+html, body{
+  height:100vh;
+}
+
 /* header - titre et règle */
 
 header{
@@ -24,7 +28,7 @@ header h1{
 
 #header-parent{
   width:80%;
-  border:solid 2px white;
+  border:solid 5px white;
   margin:20px 10px;
 }
 
@@ -32,15 +36,21 @@ header h1{
   text-align:center;
   border:none;
   font-weight:bold;
-  letter-spacing:1px;
   padding:8px;
   background-color:white;
   width:100%;
   font-size:1.3rem;
+  cursor:pointer;
 }
 
 #title-rules:hover{
-  background:#82ccdd;
+  background:#ffc7b3;
+}
+
+#span-rules{
+  padding: 0px 10px 10px 10px;
+  vertical-align: super;
+  letter-spacing:2px;
 }
 
 #rules{
@@ -48,8 +58,13 @@ header h1{
   background:#fff;
   line-height:1.7;
   letter-spacing: 1px;
-  font-size:1.1rem;
+  font-size:1.2rem;
   display:none;
+}
+
+#rules span{
+  font-weight:bold;
+  color:#1e3799;
 }
 
 
@@ -58,23 +73,52 @@ header h1{
 main{
   display:flex;
   flex-direction:column;
-  margin:40px 5px;
+  margin:30px 0px;
   justify-content: center;
   align-items: center;
 }
 
-main img{
+#main-conteneur{
+  display:flex;
+  justify-content: space-between;
+}
+
+#main-left{
+  box-shadow:0px 0px 15px #e15f41;
+}
+
+#main-left img, #main-right img{
+  width:250px;
+  height:250px;
+}
+
+#main-center{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-button{
+  display:flex;
+  flex-direction:column;
+}
+
+main #dice-image{
   width: 100px;
   height:100px;
-  padding-top:30px;
+  margin-top:60px
 }
+
+/* button */
 
 main button{
   font-size:1.2rem;
   letter-spacing:1px;
-  border:solid 1px;
+  border:solid 2px;
   border-radius:10px;
   background-color: #fff;
+  cursor:pointer;
 }
 
 main button:hover {
@@ -87,21 +131,23 @@ main button:active{
 }
 
 #lancer{
-  padding:10px 15px;
+  padding:10px 5px;
 }
 
 #hold{
-  padding:10px 50px;
+  padding:10px 5px;
 }
 
 #lancer, #hold{
-  margin:15px 0px 10px 0px;
+  margin:15px 0px;
 }
 
 #new-game{
   padding:8px;
-  margin-top : 15px;
+  margin-top:35px;
 }
+
+/* Elements centrals */
 
 .p-texte{
   font-size:1.3rem;
@@ -114,20 +160,95 @@ main button:active{
 .current{
   margin:15px 0px;
   font-size:1.2rem;
-  font-weight:500;
+  font-weight:600;
+  color:#1e3799;
 }
 
 .global{
   font-size:1.2rem;
   font-weight:500;
-  padding-bottom:5px;
+  padding:3px;
+}
+
+.player-size{
+  font-size:1.5rem;
 }
 
 #div-score-global{
   background-color:#e15f41;
   color:white;
   padding:5px 5px 10px 5px;
+}
 
+
+#main-left, #main-right{
+  margin:30px 100px;
+  padding-top:20px;
+  text-align:center;
+  font-size:1.3rem;
+}
+
+@media screen and (max-width:1300px){
+#main-left{
+  margin:30px 50px 0px 0px;
+}
+
+#main-right{
+    margin:30px 0px 0px 50px;
+  }
+}
+
+@media screen and (max-width:800px){
+  #main-left{
+      margin:30px 40px 0px 0px;
+  }
+  #main-right{
+      margin:30px 0px 0px 40px;
+  }
+}
+
+@media screen and (max-width:700px){
+  #main-left{
+      margin:30px 20px 0px 0px;
+  }
+  #main-right{
+      margin:30px 0px 0px 20px;
+  }
+  #main-left img, #main-right img{
+    width:200px;
+    height:200px;
+  }
+  main #dice-image{
+    width:70px;
+    height:70px;
+  }
+}
+
+@media screen and (max-width:600px){
+  #main-left img, #main-right img{
+    width:150px;
+    height:150px;
+  }
+}
+
+@media screen and (max-width:480px){
+  #main-left{
+      margin:30px 10px 0px 0px;
+  }
+  #main-right{
+      margin:30px 10px 0px 10px;
+  }
+  #main-left img, #main-right img{
+    width:100px;
+    height:100px;
+  }
+}
+
+#p-win{
+  font-size:1.5rem;
+  letter-spacing:2px;
+  margin-top:20px;
+  font-weight:600;
 }
 
 main hr{
@@ -135,45 +256,86 @@ main hr{
   height: 2px;
   background-color: #3742fa;
   border:none;
-  margin:5px 0px 25px 0px;
+  margin:15px 0px 30px 0px;
 }
 
-#center{
-  margin:10px 0px;
+#mute{
+  font-size:1.1rem;
+  font-style:italic;
+  padding-top:20px;
+}
+
+#mute span{
+  font-size:25px;
+  margin-left:5px;
+  font-style:normal;
+  cursor:pointer;
+}
+
+/* Footer - credits */
+
+footer{
   display:flex;
-  justify-content: center;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffc7b3;
+  width:100%;
+  height:30%;
 }
 
-#player-1, #player-2, main img{
-  margin:30px 100px;
+#footer-parent{
+  width:80%;
+  margin:15px;
+  border:solid 5px white;
+}
+
+#credits{
   text-align:center;
+  border:none;
+  font-weight:bold;
+  padding:8px;
+  background-color:white;
+  width:100%;
   font-size:1.3rem;
+  cursor:pointer;
 }
 
-@media screen and (max-width:950px){
-  #player-1, #player-2, main img{
-    margin:30px 80px;
-  }
+#credits:hover{
+  background: #3742fa;
+  color:white;
 }
 
-@media screen and (max-width:800px){
-  #player-1, #player-2, main img{
-    margin:30px 60px;
-  }
+#footer-child{
+  display:none;
 }
 
-@media screen and (max-width:700px){
-  #player-1, #player-2, main img{
-    margin:30px 20px;
-  }
-  main img{
-    width: 70px;
-    height:70px;
-  }
+#credits-list{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  align-items: center;
+  padding: 25px;
+  background:#fff;
+  line-height:1.7;
+  letter-spacing: 1px;
+  font-size:1.2rem;
 }
 
-@media screen and (max-width:450px){
-  #player-1, #player-2, main img{
-    margin:30px 8px;
-  }
+footer p{
+  font-weight:bold;
+  letter-spacing:1px;
+  font-size:1.3rem;
+  text-align:center;
+}
+
+footer a{
+  text-align:center;
+  color: black;
+}
+
+footer a:hover{
+  color:#3742fa;
+  font-weight:bold;
 }
