@@ -15,7 +15,7 @@
       <div id="header-parent">
         <button id="title-rules"><img src="https://img.icons8.com/pastel-glyph/32/000000/double-right.png"/><span id="span-rules">Règles du jeu</span><img src="https://img.icons8.com/pastel-glyph/32/000000/double-left.png"/></button>
         <div id="header-child">
-          <div id='rules'><p>Il y a deux joueurs. Le premier joueur lance le dée, le chiffre sur la face du dée est automatiquement enregistré dans <span>score actuel</span>. Il peut ensuite relancer le dée autant de fois qu'il souhaite et son <span>score actuel</span> augmente. En revanche, s'il fait le chiffre 1, le joueur perd tout ses points.</p>
+          <div id='rules'><p>Il y a deux joueurs. Le premier joueur lance le dé, le chiffre sur la face du dé est automatiquement enregistré dans <span>score actuel</span>. Il peut ensuite relancer le dé autant de fois qu'il souhaite et son <span>score actuel</span> augmente. En revanche, s'il fait le chiffre 1, le joueur perd tout ses points.</p>
           <br>
           <p>A tout moment, le joueur peut sécuriser ses points gagnés en cliquant sur le bouton <span>hold</span>. Ses points sont alors transférés dans <span>score global</span> et c'est au tour de l'autre joueur de lancer le dé.</p>
           <br>
@@ -26,24 +26,24 @@
       </div>
     </header>
     <main>
-      <p class="p-texte">C'est au tour du joueur 1</p>
+      <p class="p-text" id="p-text1">C'est au tour du joueur 1</p>
       <div id="main-conteneur">
         <div id="main-left">
           <img src="images/panda-1.png">
           <div id="player-1">
             <h2 class="player-size">Joueur 1</h2>
             <h3 class="current">Score actuel</h3>
-            <p id="score-current-1"></p>
+            <p id="score-current-1">0</p>
             <div id="div-score-global">
               <h3 class="global">Score global</h3>
-              <p id="score-global-1">45</p>
+              <p id="score-global-1">0</p>
             </div>
           </div>
         </div>
 
         <div id="main-center">
           <div id="main-button">
-            <button id="lancer">Lancer le dé</button>
+            <button id="throw">Lancer le dé</button>
             <button id="hold">Hold</button>
           </div>
           <div class="space">
@@ -56,19 +56,19 @@
           <div id="player-2">
             <h2 class="player-size">Joueur 2</h2>
             <h3 class="current">Score actuel</h3>
-            <p id="score-current-2"></p>
+            <p id="score-current-2">0</p>
             <div id="div-score-global">
               <h3 class="global">Score global</h3>
-              <p id="score-global-2">73</p>
+              <p id="score-global-2">0</p>
             </div>
           </div>
         </div>
       </div>
       <p id="p-win"></p>
       <hr>
-      <p class="p-texte">Vous voulez refaire une partie ?</p>
+      <p class="p-text" id="p-text2">Vous voulez refaire une partie ?</p>
       <button id="new-game">Nouvelle partie</button>
-      <p id="mute">Désactiver le son :<span>&#128263;</span></p>
+      <p id="p-mute">Désactiver le son :<span id="mute">&#128263;</span></p>
     </main>
     <footer>
       <div id="footer-parent">
@@ -92,7 +92,7 @@
         </div>
     </footer>
 
-  <script src="jquery-3.6.0.js"></script>
-  <script src="script.js"></script>
+  <script src="Javascript/jquery-3.6.0.js"></script>
+  <script src="Javascript/script2.js"></script>
   </body>
 </html>
