@@ -28,10 +28,34 @@ const audioDice = new Audio('Audio/dice.wav');
 const audioHold = new Audio('Audio/hold.wav');
 const audioLost = new Audio('Audio/lost.wav');
 const audioWin = new Audio('Audio/win.flac');
-const audioNew = new Audio('Audio/new.flac');
-let audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
+let audio = [audioDice, audioHold, audioLost, audioWin];
 let off;
 let on;
+
+
+muted.addEventListener('click', () => {
+  if(mutedText.innerText === 'Désactiver le son :'){
+      mutedText.innerText = 'Activer le son :';
+      isMuted(off);
+  } else if(mutedText.innerText === 'Activer le son :') {
+      mutedText.innerText = 'Désactiver le son :';
+      isMuted(on);
+  }
+});
+
+function isMuted(activate){
+  if(activate === off){
+    for(let track of audio){
+      track.muted = true;
+    }
+  }
+
+  if(activate === on){
+    for(let track of audio){
+      track.muted = false;
+    }
+  }
+}
 
 // Variables
 let player1 = true;
@@ -42,12 +66,12 @@ let resultCurrentScore2 = 0;
 let resultGlobalScore1 = 0;
 let resultGlobalScore2 = 0;
 
-// function random number
+// Fonction chiffre dée aléatoire
 function randomNumber(){
   return (Math.floor(Math.random() * 5) +1);
 }
 
-// function player style
+// fonction style tour joueur
 function styleMain(main){
     if(main === main1){
       main1.style.boxShadow = '0px 0px 15px #e15f41';
@@ -58,8 +82,8 @@ function styleMain(main){
     }
 }
 
-// EVENT
-// Event - dice throw
+// Gestionnaires d'événement
+// Event - Jet de dée
 buttonDiceThrow.addEventListener('click', () =>{
   audioDice.play();
   diceThrow();
@@ -73,42 +97,27 @@ buttonDiceThrow.addEventListener('click', () =>{
   }
 });
 
-// Event - press the hold bouton
+// Event - appuyer sur bouton hold
 hold.addEventListener('click', () =>{
   globalPlayerScore();
   if(player1 === true){
     player1 = false;
     player2 = true;
+  //  styleMain(main2);
   } else {
     player1 = true;
     player2 = false;
+  //  styleMain(main1);
   }
 });
 
-// Event - start a game
+// Event - recommencer une partie
 newGame.addEventListener('click', () =>{
   startGame();
 });
 
-// Event mute button
-muted.addEventListener('click', () => {
-  if(mutedText.innerText === 'Désactiver le son :'){
-      mutedText.innerText = 'Activer le son :';
-      muted.innerHTML = '&#128264;';
-      for(let track of audio){
-        track.muted = true;
-      }
 
-  } else if(mutedText.innerText === 'Activer le son :') {
-      mutedText.innerText = 'Désactiver le son :';
-      muted.innerHTML = '&#128263;';
-      for(let track of audio){
-        track.muted = false;
-      }
-  }
-});
-
-// Function dice Throw
+// Function lancer de dé
 function diceThrow(){
   let random = randomNumber();
   switch(random){
@@ -136,14 +145,6 @@ function diceThrow(){
       if(random !== 1){
       result = resultCurrentScore1 += random;
       currentScore1.innerText = result;
-        if(result >= 100){
-          audioWin.play();
-          winText.innerText = 'Victoire du joueur 1 !';
-          winText.style.display= 'inline-block';
-          buttonDiceThrow.disabled = true;
-          hold.disabled = true;
-          styleMain(main1)
-        }
       } else if(random === 1 && resultCurrentScore1 === 0){
         player1 = true;
       } else if(random === 1 && resultCurrentScore1 !== 0) {
@@ -161,14 +162,6 @@ function diceThrow(){
       if(random !== 1){
       result = resultCurrentScore2 += random;
       currentScore2.innerText = result;
-        if(result >= 100){
-          audioWin.play();
-          winText.innerText = 'Victoire du joueur 2 !';
-          winText.style.display= 'inline-block';
-          buttonDiceThrow.disabled = true;
-          hold.disabled = true;
-          styleMain(main2)
-        }
       } else if(random === 1 && resultCurrentScore2 === 0){
       player2 = true;
 
@@ -185,24 +178,23 @@ function diceThrow(){
 }
 
 
-// Function hold - global score
+// Function hold - score global
 function globalPlayerScore(){
   if(player1 === true){
     resultGlobalScore1 += resultCurrentScore1;
     globalScore1.innerText = resultGlobalScore1;
     currentScore1.innerText = 0;
 
-      if(resultGlobalScore1 < 100){
+      if(resultGlobalScore1 < 15){
         resultCurrentScore1 = 0;
         audioHold.play();
         text1.innerText = "C\'est au tour du joueur 2";
         styleMain(main2);
       }
 
-      if(resultGlobalScore1 >= 100){
+      if(resultGlobalScore1 >= 15){
         audioWin.play();
         winText.innerText = 'Victoire du joueur 1 !';
-        winText.style.display= 'inline-block';
         buttonDiceThrow.disabled = true;
         hold.disabled = true;
         styleMain(main1)
@@ -214,18 +206,16 @@ function globalPlayerScore(){
     globalScore2.innerText = resultGlobalScore2;
     currentScore2.innerText = 0;
 
-    if(resultGlobalScore2 < 100){
+    if(resultGlobalScore2 < 15){
     resultCurrentScore2 = 0;
     audioHold.play();
     text1.innerText = "C\'est au tour du joueur 1";
-
     styleMain(main1);
   }
 
-    if(resultGlobalScore2 >= 100){
+    if(resultGlobalScore2 >= 15){
     audioWin.play()
     winText.innerText = 'Victoire du joueur 2 !';
-    winText.style.display= 'inline-block';
     buttonDiceThrow.disabled = true;
     hold.disabled = true;
     styleMain(main2);
@@ -234,12 +224,10 @@ function globalPlayerScore(){
 }
 
 
-// function new game
+// function nouveau jeu
 function startGame(){
-  audioNew.play();
   player1 = true;
   styleMain(main1);
-  winText.style.display = 'none';
   winText.innerText = '';
   currentScore1.innerText = 0;
   currentScore2.innerText = 0;
