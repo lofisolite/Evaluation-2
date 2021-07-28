@@ -3,53 +3,56 @@
 
 <head>
   <title>100 ou Rien</title>
-  <meta charset="utf-8" />
+  <meta name="Description" content="100 ou rien est un jeu de dé où peuvent s'affronter deux joueurs.">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="Style/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="Style/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <header>
+  <header class="d-flex flex-column justify-content-center align-items-center">
     <h1>100 ou Rien</h1>
     <div id="header-parent">
-      <button id="title-rules"><img src="https://img.icons8.com/pastel-glyph/32/000000/double-right.png" /><span id="span-rules">Règles du jeu</span><img src="https://img.icons8.com/pastel-glyph/32/000000/double-left.png" /></button>
+      <button id="title-rules" class="text-center"><img src="https://img.icons8.com/pastel-glyph/32/000000/double-right.png" /><span id="span-rules">Règles du jeu</span><img src="https://img.icons8.com/pastel-glyph/32/000000/double-left.png" /></button>
       <div id="header-child">
-        <div id='rules'>
-          <p>Il y a deux joueurs. Le premier joueur lance le dé, le chiffre sur la face du dé est automatiquement enregistré dans <span>score actuel</span>. Il peut ensuite relancer le dé autant de fois qu'il souhaite et son <span>score actuel</span>
-            augmente. En revanche, s'il fait le chiffre 1 et que ce n'est pas son premier lancé de dé du tour, le joueur perd tout ses points.</p>
+        <div id="rules">
+          <p>Il y a deux joueurs. Le premier joueur lance le dé, le chiffre sur la face du dé est automatiquement enregistré dans le <span>score intermédiaire</span>. Le joueur peut relancer le dé autant de fois qu'il souhaite et son <span>score intermédiaire</span> augmente.</p>
           <br>
-          <p>A tout moment, le joueur peut sécuriser ses points gagnés en cliquant sur le bouton <span>hold</span>. Ses points sont alors transférés dans <span>score global</span> et c'est au tour de l'autre joueur de lancer le dé.</p>
+          <p>En revanche, si le dé fait un score de 1, le joueur perd tout ses points placés dans le <span>score intermédiaire</span> et c'est au tour de l'autre joueur.</p>
           <br>
-          <p>Le vainqueur est celui qui atteint un score global de <span>100</span> en premier.
+          <p>A tout moment, le joueur peut sécuriser ses points gagnés en cliquant sur le bouton <span>Sécuriser</span>. Ses points sont alors transférés dans le <span>score acquis</span> et c'est au tour de l'autre joueur de lancer le dé.</p>
+          <br>
+          <p>Le vainqueur est le premier joueur à atteindre un <span>score acquis</span> ou <span>intermédiaire</span> de 100.
           </p>
         </div>
       </div>
     </div>
   </header>
-  <main>
+  <main class="d-flex flex-column justify-content-center align-items-center">
 
-    <p class="p-text" id="p-text1">C'est au tour du joueur 1</p>
-    <div id="main-conteneur">
+    <p class="p-text" id="p-text1">C'est au tour de Sacha</p>
+    <div class="d-flex justify-content-center">
       <div id="main-left">
         <img src="images/panda-1.png">
         <div id="player-1">
-          <h2 class="player-size">Joueur 1</h2>
-          <h3 class="current">Score temporaire</h3>
+          <h2 class="player-size" id="player-name1"></h2>
+          <h3 class="current">Score intermédiaire</h3>
           <p id="score-current-1">0</p>
           <div id="div-score-global">
-            <h3 class="global">Score global</h3>
+            <h3 class="global">Score acquis</h3>
             <p id="score-global-1">0</p>
           </div>
         </div>
       </div>
 
-      <div id="main-center">
-        <div id="main-button">
-          <button id="throw">Lancer le dé</button>
-          <button id="hold">Hold</button>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column">
+          <button id="throw" class="on">Lancer le dé</button>
+          <button id="hold" class="on">Sécuriser</button>
         </div>
         <div class="space">
           <img id="dice-image" src="images/face-1.png">
@@ -59,34 +62,35 @@
       <div id="main-right">
         <img src="images/panda-2.png">
         <div id="player-2">
-          <h2 class="player-size">Joueur 2</h2>
-          <h3 class="current">Score temporaire</h3>
+          <h2 class="player-size" id="player-name2"></h2>
+          <h3 class="current">Score intermédiaire</h3>
           <p id="score-current-2">0</p>
           <div id="div-score-global">
-            <h3 class="global">Score global</h3>
+            <h3 class="global">Score acquis</h3>
             <p id="score-global-2">0</p>
           </div>
         </div>
       </div>
     </div>
+    <p id="p-state" style="display:none"></p>
     <p id="p-win" style="display:none"></p>
-    <hr>
+    <div id="ligne"></div>
     <p class="p-text" id="p-text2">Vous voulez refaire une partie ?</p>
-    <button id="new-game">Nouvelle partie</button>
-    <div class="sound-text">
+    <button id="new-game" class="on">Nouvelle partie</button>
+    <div class="sound-text d-flex">
       <p id="p-mute">Désactiver le son :</p>
       <span id="mute">&#128263;</span>
     </div>
   </main>
-  <footer>
-    <div id="footer-parent">
-      <button id="credits">Credits</button>
+  <footer class="d-flex flex-column justify-content-start align-items-center">
+    <div id="footer-parent" class="text-center">
+      <button id="credits"><img src="https://img.icons8.com/pastel-glyph/32/000000/double-right.png" /><span id="span-rules">Crédits</span><img src="https://img.icons8.com/pastel-glyph/32/000000/double-left.png" /></button>
       <div id="footer-child">
-        <div id='credits-list'>
+        <div id="credits-list" class="d-flex flex-column justify-content-center align-items-center">
           <p>Sons</p>
           <div class="footer-center">
             <a href="https://freesound.org/people/brkdwnb3njo/sounds/554913/"> Lancer de dé</a> /
-            <a href="https://freesound.org/people/Deathscyp/sounds/404049/">Hold</a> /
+            <a href="https://freesound.org/people/Deathscyp/sounds/404049/">Sécuriser</a> /
             <a href="https://freesound.org/people/themusicalnomad/sounds/253886/">Perdu</a> /
             <a href="https://freesound.org/people/plasterbrain/sounds/397353/">Gagné</a> /
             <a href="https://freesound.org/people/Magnesus/sounds/353819/">Nouvelle partie</a>
@@ -94,15 +98,15 @@
           <br>
           <p>Images</p>
           <div class="footer-center">
-            <a href="https://pngtree.com/freepng/panda-mascot-logo-design_6003112.html">panda à bandeau</a> /
-            <a href="https://pngtree.com/freepng/panda-with-chain-and-hat-mascot-logo-design_6004164.html">panda à chapeau</a>
+            <a href="https://pngtree.com/freepng/panda-mascot-logo-design_6003112.html">Panda à bandeau</a> /
+            <a href="https://pngtree.com/freepng/panda-with-chain-and-hat-mascot-logo-design_6004164.html">Panda à chapeau</a>
           </div>
         </div>
       </div>
   </footer>
 
   <script src="Javascript/jquery-3.6.0.js"></script>
-  <script src="Javascript/script2.js"></script>
+  <script src="Javascript/script.js"></script>
 </body>
 
 </html>

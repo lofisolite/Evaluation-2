@@ -8,14 +8,9 @@ html, body{
   height:100vh;
 }
 
-/* header - titre et règle */
-
+/* header - title and rules */
 header{
   background-color:#3742fa;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items:center;
 }
 
 header h1{
@@ -33,7 +28,6 @@ header h1{
 }
 
 #title-rules{
-  text-align:center;
   border:none;
   font-weight:bold;
   padding:8px;
@@ -49,7 +43,6 @@ header h1{
 
 #span-rules{
   padding: 0px 10px 10px 10px;
-  vertical-align: super;
   letter-spacing:2px;
 }
 
@@ -68,19 +61,9 @@ header h1{
 }
 
 
-/* main - interface du jeu */
-
+/* Main - interface game */
 main{
-  display:flex;
-  flex-direction:column;
   margin:30px 0px;
-  justify-content: center;
-  align-items: center;
-}
-
-#main-conteneur{
-  display:flex;
-  justify-content: space-between;
 }
 
 #main-left{
@@ -92,26 +75,14 @@ main{
   height:250px;
 }
 
-#main-center{
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-}
-
-#main-button{
-  display:flex;
-  flex-direction:column;
-}
-
 main #dice-image{
   width: 100px;
   height:100px;
   margin-top:60px
 }
 
-/* button */
 
+/* Button */
 main button{
   font-size:1.2rem;
   letter-spacing:1px;
@@ -121,13 +92,21 @@ main button{
   cursor:pointer;
 }
 
-main button:hover {
+.on:hover{
   background-color:#e15f41;
   color:#fff;
 }
 
-main button:active{
+.on:active{
   background-color:#b33939;
+}
+
+.disabled:hover{
+  background-color:#fff;
+}
+
+.disabled:active{
+  background-color:#fff;
 }
 
 #throw{
@@ -139,7 +118,7 @@ main button:active{
 }
 
 #throw, #hold{
-  margin:15px 0px;
+  margin:10px 0px;
 }
 
 #new-game{
@@ -147,10 +126,9 @@ main button:active{
   margin-top:25px;
 }
 
-/* Elements centrals */
-
+/* Center elements */
 .p-text{
-  font-size:1.3rem;
+  font-size:1.4rem;
   letter-spacing:1px;
   color:#1e3799;
   font-weight:700;
@@ -159,19 +137,22 @@ main button:active{
 
 .current{
   margin:15px 0px;
-  font-size:1.2rem;
+  font-size:1.3rem;
   font-weight:600;
   color:#1e3799;
 }
 
 .global{
-  font-size:1.2rem;
+  font-size:1.3rem;
   font-weight:500;
   padding:3px;
+  margin: 10px 0px;
 }
 
 .player-size{
-  font-size:1.5rem;
+  font-size:1.8rem;
+  font-weight:bold;
+  margin-top:5px;
 }
 
 #div-score-global{
@@ -181,6 +162,9 @@ main button:active{
   margin-top:10px;
 }
 
+.global ~ p, .current ~ p{
+  font-size:1.5rem;
+}
 
 #main-left, #main-right{
   margin:30px 120px;
@@ -230,6 +214,9 @@ main button:active{
     width:150px;
     height:150px;
   }
+  .current, .global{
+    font-size:1.1rem;
+  }
 }
 
 @media screen and (max-width:480px){
@@ -245,6 +232,14 @@ main button:active{
   }
 }
 
+#p-state{
+  font-size:1.2rem;
+  letter-spacing:1px;
+  font-weight:550;
+  text-align:center;
+  margin-top:20px;
+}
+
 #p-win{
   color:white;
   font-size:1.6rem;
@@ -257,16 +252,11 @@ main button:active{
   box-shadow: 0px 0px 20px lightgrey;
 }
 
-main hr{
+#ligne{
   width: 50%;
-  height: 2px;
+  height: 3px;
   background-color: #3742fa;
-  border:none;
   margin:20px 0px 40px 0px;
-}
-
-.sound-text{
-  display:flex;
 }
 
 #p-mute{
@@ -283,16 +273,12 @@ main hr{
   cursor:pointer;
 }
 
-/* Footer - credits */
 
+/* Footer - credits */
 footer{
-  display:flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  align-items: center;
   background-color: #ffc7b3;
   width:100%;
-  height:35%;
+  height:auto;
 }
 
 #footer-parent{
@@ -302,7 +288,6 @@ footer{
 }
 
 #credits{
-  text-align:center;
   border:none;
   font-weight:bold;
   padding:8px;
@@ -322,11 +307,6 @@ footer{
 }
 
 #credits-list{
-  display:flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-  align-items: center;
   padding: 25px;
   background:#fff;
   line-height:1.7;
