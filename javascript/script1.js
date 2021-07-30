@@ -18,20 +18,20 @@ const mutedText = document.getElementById('p-mute');
 
 // cst images
 var diceImageToNumber = {
-  1: "images/face-1.png",
-  2: "images/face-2.png" ,
-  3: "images/face-3.png" ,
-  4: "images/face-4.png" ,
-  5: "images/face-5.png" ,
-  6: "images/face-6.png"
+  1: "Images/face-1.png",
+  2: "Images/face-2.png" ,
+  3: "Images/face-3.png" ,
+  4: "Images/face-4.png" ,
+  5: "Images/face-5.png" ,
+  6: "Images/face-6.png"
 };
 
 // Audio variables
-const audioDice = new Audio('audio/dice.wav');
-const audioHold = new Audio('audio/hold.wav');
-const audioLost = new Audio('audio/lost.wav');
-const audioWin = new Audio('audio/win.flac');
-const audioNew = new Audio('audio/new.flac');
+const audioDice = new Audio('Audio/dicethrow.wav');
+const audioHold = new Audio('Audio/hold.wav');
+const audioLost = new Audio('Audio/lost.wav');
+const audioWin = new Audio('Audio/win.flac');
+const audioNew = new Audio('Audio/new.flac');
 const audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
 
 
