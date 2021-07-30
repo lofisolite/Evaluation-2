@@ -3,6 +3,7 @@
 
 <head>
   <title>100 ou Rien</title>
+  <meta name="Description" content="100 ou rien est un jeu de dé où peuvent s'affronter deux joueurs.">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,12 +19,14 @@
       <button id="title-rules"><img src="https://img.icons8.com/pastel-glyph/32/000000/double-right.png" /><span id="span-rules">Règles du jeu</span><img src="https://img.icons8.com/pastel-glyph/32/000000/double-left.png" /></button>
       <div id="header-child">
         <div id='rules'>
-          <p>Il y a deux joueurs. Le premier joueur lance le dé, le chiffre sur la face du dé est automatiquement enregistré dans <span>score actuel</span>. Il peut ensuite relancer le dé autant de fois qu'il souhaite et son <span>score actuel</span>
-            augmente. En revanche, s'il fait le chiffre 1 et que ce n'est pas son premier lancé de dé du tour, le joueur perd tout ses points.</p>
+          <p>Il y a deux joueurs. Le premier joueur lance le dé, le chiffre sur la face du dé est automatiquement enregistré dans le <span>score intermédiaire</span>. Le joueur peut relancer le dé autant de fois qu'il souhaite et son <span>score intermédiaire</span>
+          augmente.</p>
           <br>
-          <p>A tout moment, le joueur peut sécuriser ses points gagnés en cliquant sur le bouton <span>hold</span>. Ses points sont alors transférés dans <span>score global</span> et c'est au tour de l'autre joueur de lancer le dé.</p>
+          <p>En revanche, si le dé fait un score de 1 et que ce n'est pas le premier lancé de dé du tour, le joueur perd tout ses points placés dans le <span>score intermédiaire</span> et c'est au tour de l'autre joueur.</p>
           <br>
-          <p>Le vainqueur est celui qui atteint un score global de <span>100</span> en premier.
+          <p>A tout moment, le joueur peut sécuriser ses points gagnés en cliquant sur le bouton <span>hold</span>. Ses points sont alors transférés dans le <span>score global</span> et c'est au tour de l'autre joueur de lancer le dé.</p>
+          <br>
+          <p>Le vainqueur est le premier joueur à atteindre un <span>score global</span> ou <span>intermédiaire</span> de 100.
           </p>
         </div>
       </div>
@@ -37,7 +40,7 @@
         <img src="images/panda-1.png">
         <div id="player-1">
           <h2 class="player-size">Joueur 1</h2>
-          <h3 class="current">Score temporaire</h3>
+          <h3 class="current">Score intermédiaire</h3>
           <p id="score-current-1">0</p>
           <div id="div-score-global">
             <h3 class="global">Score global</h3>
@@ -60,7 +63,7 @@
         <img src="images/panda-2.png">
         <div id="player-2">
           <h2 class="player-size">Joueur 2</h2>
-          <h3 class="current">Score temporaire</h3>
+          <h3 class="current">Score intermédiaire</h3>
           <p id="score-current-2">0</p>
           <div id="div-score-global">
             <h3 class="global">Score global</h3>
@@ -94,8 +97,8 @@
           <br>
           <p>Images</p>
           <div class="footer-center">
-            <a href="https://pngtree.com/freepng/panda-mascot-logo-design_6003112.html">panda à bandeau</a> /
-            <a href="https://pngtree.com/freepng/panda-with-chain-and-hat-mascot-logo-design_6004164.html">panda à chapeau</a>
+            <a href="https://pngtree.com/freepng/panda-mascot-logo-design_6003112.html">Panda à bandeau</a> /
+            <a href="https://pngtree.com/freepng/panda-with-chain-and-hat-mascot-logo-design_6004164.html">Panda à chapeau</a>
           </div>
         </div>
       </div>

@@ -1,27 +1,24 @@
 jQuery(document).ready(() => {
-  $('#title-rules').click(function(){$('#rules').slideToggle('400', 'linear')})
+  $('#title-rules').click(function (){$('#rules').slideToggle('400', 'linear')})
 
-  $('#credits').click(function(){$('#footer-child').slideToggle('400', 'linear')})
+  $('#credits').click(function (){$('#footer-child').slideToggle('400', 'linear') })
 })
-
 
 // DOM constantes
 const buttonDiceThrow = document.getElementById('throw');
 const hold = document.getElementById('hold');
 const newGame = document.getElementById('new-game');
-
-// Dom variables
-let currentScore1 = document.getElementById('score-current-1');
-let currentScore2 = document.getElementById('score-current-2');
-let globalScore1 = document.getElementById('score-global-1');
-let globalScore2 = document.getElementById('score-global-2');
-let text1 = document.getElementById('p-text1');
-let winText = document.getElementById('p-win');
-let diceImage = document.getElementById('dice-image');
-let main1 = document.getElementById('main-left');
-let main2 = document.getElementById('main-right');
-let muted = document.getElementById('mute');
-let mutedText = document.getElementById('p-mute');
+const currentScore1 = document.getElementById('score-current-1');
+const currentScore2 = document.getElementById('score-current-2');
+const globalScore1 = document.getElementById('score-global-1');
+const globalScore2 = document.getElementById('score-global-2');
+const text1 = document.getElementById('p-text1');
+const winText = document.getElementById('p-win');
+const diceImage = document.getElementById('dice-image');
+const main1 = document.getElementById('main-left');
+const main2 = document.getElementById('main-right');
+const muted = document.getElementById('mute');
+const mutedText = document.getElementById('p-mute');
 
 // Audio
 const audioDice = new Audio('Audio/dice.wav');
@@ -29,7 +26,7 @@ const audioHold = new Audio('Audio/hold.wav');
 const audioLost = new Audio('Audio/lost.wav');
 const audioWin = new Audio('Audio/win.flac');
 const audioNew = new Audio('Audio/new.flac');
-let audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
+const audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
 let off;
 let on;
 
@@ -43,12 +40,12 @@ let resultGlobalScore1 = 0;
 let resultGlobalScore2 = 0;
 
 // function random number
-function randomNumber(){
+function randomNumber (){
   return (Math.floor(Math.random() * 5) +1);
 }
 
 // function player style
-function styleMain(main){
+function styleMain (main){
     if(main === main1){
       main1.style.boxShadow = '0px 0px 15px #e15f41';
       main2.style.boxShadow = '0px 0px 0px transparent';
@@ -60,7 +57,7 @@ function styleMain(main){
 
 // EVENT
 // Event - dice throw
-buttonDiceThrow.addEventListener('click', () =>{
+buttonDiceThrow.addEventListener ('click', () =>{
   audioDice.play();
   diceThrow();
 
@@ -233,9 +230,8 @@ function globalPlayerScore(){
   }
 }
 
-
 // function new game
-function startGame(){
+function startGame (){
   audioNew.play();
   player1 = true;
   styleMain(main1);

@@ -8,7 +8,7 @@ html, body{
   height:100vh;
 }
 
-/* header - titre et règle */
+/* header - title and rules */
 
 header{
   background-color:#3742fa;
@@ -68,7 +68,7 @@ header h1{
 }
 
 
-/* main - interface du jeu */
+/* Main - interface game */
 
 main{
   display:flex;
@@ -110,7 +110,7 @@ main #dice-image{
   margin-top:60px
 }
 
-/* button */
+/* Button */
 
 main button{
   font-size:1.2rem;
@@ -139,7 +139,7 @@ main button:active{
 }
 
 #throw, #hold{
-  margin:15px 0px;
+  margin:10px 0px;
 }
 
 #new-game{
@@ -147,7 +147,7 @@ main button:active{
   margin-top:25px;
 }
 
-/* Elements centrals */
+/* Center elements */
 
 .p-text{
   font-size:1.3rem;
@@ -159,15 +159,16 @@ main button:active{
 
 .current{
   margin:15px 0px;
-  font-size:1.2rem;
+  font-size:1.3rem;
   font-weight:600;
   color:#1e3799;
 }
 
 .global{
-  font-size:1.2rem;
+  font-size:1.3rem;
   font-weight:500;
   padding:3px;
+  margin: 10px 0px;
 }
 
 .player-size{
@@ -179,6 +180,10 @@ main button:active{
   color:white;
   padding:5px 5px 10px 5px;
   margin-top:10px;
+}
+
+.global ~ p, .current ~ p{
+  font-size:1.5rem;
 }
 
 
@@ -229,6 +234,9 @@ main button:active{
   #main-left img, #main-right img{
     width:150px;
     height:150px;
+  }
+  .current, .global{
+    font-size:1.1rem;
   }
 }
 
