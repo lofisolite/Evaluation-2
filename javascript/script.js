@@ -27,11 +27,11 @@ var diceImageToNumber = {
 };
 
 // Audio variables
-const audioDice = new Audio('Audio/dice.wav');
-const audioHold = new Audio('Audio/hold.wav');
-const audioLost = new Audio('Audio/lost.wav');
-const audioWin = new Audio('Audio/win.flac');
-const audioNew = new Audio('Audio/new.flac');
+const audioDice = new Audio('audio/dice.wav');
+const audioHold = new Audio('audio/hold.wav');
+const audioLost = new Audio('audio/lost.wav');
+const audioWin = new Audio('audio/win.flac');
+const audioNew = new Audio('audio/new.flac');
 const audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
 
 
