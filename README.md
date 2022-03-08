@@ -10,6 +10,8 @@ Les règles se trouvent sous le titre et les crédits pour les images et le son 
 
 Il est possible de couper le son et de le réactiver en clichant sur les icônes d'enceintes audio.
 
+## Lien
+https://lofisolite.github.io/jeu-100-ou-rien/
 
 ## Les languages et framework utilisées :
 -HTML  
