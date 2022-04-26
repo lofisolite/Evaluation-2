@@ -221,15 +221,32 @@ main button{
 
 @media screen and (max-width:480px){
   #main-left{
-      margin:30px 10px 0px 0px;
+      margin:30px 3px 0px 4px;
   }
   #main-right{
-      margin:30px 10px 0px 10px;
+      margin:30px 3px 0px 2px;
   }
   #main-left img, #main-right img{
     width:100px;
     height:100px;
   }
+
+  .on{
+    font-size:0.9rem;
+  }
+
+  .player-size{
+    font-size:1.5rem;
+  }
+
+  #throw{
+    padding:10px 3px;
+  }
+  
+  #hold{
+    padding:10px 3px;
+  }
+
 }
 
 #p-state{

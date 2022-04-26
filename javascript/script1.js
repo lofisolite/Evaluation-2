@@ -38,7 +38,7 @@ const audio = [audioDice, audioHold, audioLost, audioWin, audioNew];
 let result;
 let currentPlayer = 1;
 
-// Object
+// Object Player
 let Player = function(id, name) {
   this.name = name;
   this.id = id;
@@ -55,6 +55,7 @@ let Player = function(id, name) {
   }
 };
 
+
 // Object methods
 // Dice Throw function
 Player.prototype.play = function() {
@@ -62,31 +63,31 @@ Player.prototype.play = function() {
   diceImage.setAttribute("src", diceImageToNumber[random]);
   setButtonStyle(active === true);
   if(random !== 1) {
-    result = this.resultCurrentScore += random;
-    this.currentScore.innerText = result;
-    text1.innerText = "C\'est au tour de " + this.name;
-    stateText.style.display= 'inline-block';
-    if(result === undefined){
-      stateText.innerText = this.name + " gagne 0 points";
-    } else {
-    stateText.innerText = this.name + " gagne " + this.currentScore.innerText + " points";
-    }
+      result = this.resultCurrentScore += random;
+      this.currentScore.innerText = result;
+      text1.innerText = "C\'est au tour de " + this.name;
+      stateText.style.display= 'inline-block';
+      if(result === undefined){
+        stateText.innerText = this.name + " gagne 0 points";
+      } else {
+      stateText.innerText = this.name + " gagne " + this.currentScore.innerText + " points";
+      }
 
-    if(result >= 100) {
-      win();
-    }
+      if(result >= 100) {
+        win();
+      }
 
   } else if(random === 1) {
     audioLost.play();
-    if(result === undefined) {
-      stateText.innerText = this.name + " perd 0 points";
-    } else {
-      stateText.innerText = this.name + " perd " + this.currentScore.innerText + " points";
-    }
-    stateText.style.display= 'inline-block';
-    this.currentScore.innerText = 0;
-    result = 0;
-    this.resultCurrentScore = 0;
+      if(result === undefined) {
+        stateText.innerText = this.name + " perd 0 points";
+      } else {
+        stateText.innerText = this.name + " perd " + this.currentScore.innerText + " points";
+      }
+      stateText.style.display= 'inline-block';
+      this.currentScore.innerText = 0;
+      result = 0;
+      this.resultCurrentScore = 0;
 
     // Switch to the other player
     if (this.id === 1) {
