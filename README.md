@@ -23,7 +23,7 @@ S'il fait le chiffre "1", il perd tout ses points et c'est au tour de l'autre jo
 En cliquant sur le bouton "sécuriser", un jour sécurise ses points et passe la main.
 
 
-## Les languages et framework utilisées :
+## Les languages et framework utilisés :
 -HTML  
 -CSS  
 -Bootstrap  
